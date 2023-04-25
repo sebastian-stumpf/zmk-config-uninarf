@@ -1,0 +1,10 @@
+if UNINARF
+
+config ZMK_KEYBOARD_NAME
+    default "uninarf"
+
+config SPI
+    default y
+
+
+endif

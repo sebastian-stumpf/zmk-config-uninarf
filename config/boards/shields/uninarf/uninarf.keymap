@@ -1,0 +1,20 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include "keys_de.h"
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &kp DE_Q       &kp DE_W       &kp DE_E       &kp DE_R       &kp DE_T   &kp DE_1 &kp DE_4  &kp DE_Z       &kp DE_U       &kp DE_I       &kp DE_O       &kp DE_P
+                &mt LGUI DE_A  &mt LALT DE_S  &mt LCTRL DE_D &mt LSHFT DE_F &kp DE_G   &kp DE_2 &kp DE_5  &kp DE_H       &mt LSHFT DE_J &mt LCTRL DE_K &mt LALT DE_L  &mt LGUI DE_HASH
+                &kp DE_Y       &kp DE_X       &kp DE_C       &kp DE_V       &kp DE_B   &kp DE_3 &kp DE_6  &kp DE_N       &kp DE_M       &kp DE_COMMA   &kp DE_DOT     &kp DE_MINUS
+                                              &kp ESC        &kp DEL        &kp BSPC                      &kp SPC        &kp TAB        &kp RET
+            >;
+        };
+    };
+};

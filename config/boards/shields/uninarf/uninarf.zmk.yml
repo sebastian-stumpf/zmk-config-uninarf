@@ -1,0 +1,8 @@
+file_format: "1"
+id: uninarf
+name: UNINARF
+type: shield
+url: https://github.com/sebastian-stumpf/uninarf
+requires: [seeeduino_xiao_ble]
+features:
+  - keys

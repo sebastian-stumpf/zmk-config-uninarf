@@ -4,17 +4,66 @@
 #include <dt-bindings/zmk/outputs.h>
 #include "keys_de.h"
 
+#define BASE 0
+#define SYM  1
+#define NUM  2
+#define FUN  3
+#define NAV  4
+#define OTHER 5
+
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &kp DE_Q       &kp DE_W       &kp DE_E       &kp DE_R       &kp DE_T   &kp DE_N1 &kp DE_N4  &kp DE_Z       &kp DE_U       &kp DE_I       &kp DE_O       &kp DE_P
-                &mt LGUI DE_A  &mt LALT DE_S  &mt LCTRL DE_D &mt LSHFT DE_F &kp DE_G   &kp DE_N2 &kp DE_N5  &kp DE_H       &mt LSHFT DE_J &mt LCTRL DE_K &mt LALT DE_L  &mt LGUI DE_HASH
-                &kp DE_Y       &kp DE_X       &kp DE_C       &kp DE_V       &kp DE_B   &kp DE_N3 &kp DE_N6  &kp DE_N       &kp DE_M       &kp DE_COMMA   &kp DE_DOT     &kp DE_MINUS
-                                              &kp ESC        &kp DEL        &kp BSPC                        &kp SPC        &kp TAB        &kp RET
+                &kp DE_Q       &kp DE_W       &kp DE_E       &kp DE_R       &kp DE_T   &C_PREV     &tog NUM   &kp DE_Z       &kp DE_U       &kp DE_I       &kp DE_O       &kp DE_P
+                &mt LGUI DE_A  &mt LALT DE_S  &mt LCTRL DE_D &mt LSHFT DE_F &kp DE_G   &C_PP       &to BASE   &kp DE_H       &mt LSHFT DE_J &mt LCTRL DE_K &mt LALT DE_L  &mt LGUI DE_HASH
+                &kp DE_Y       &kp DE_X       &kp DE_C       &kp DE_V       &kp DE_B   &C_NEXT     &tog NAV   &kp DE_N       &kp DE_M       &kp DE_COMMA   &kp DE_DOT     &kp DE_MINUS
+                                              &lt NUM ESC    &lt FUN DEL    &kp BSPC                          &kp SPC   &lt NAV TAB &lt SYM RET
             >;
         };
+
+        sym_layer {
+            label= "SYM";
+            bindings = <
+                &kp DE_AT   &kp DE_LPAR &kp DE_RPAR  &kp DE_UDIA  &kp DE_SS    &trans           &trans   &none    &none     &none      &none    &none
+                &kp DE_BSLS &kp DE_LCBR &kp DE_RCBR  &kp DE_ADIA  &kp DE_ODIA  &out OUT_TOG     &trans   &none    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI
+                &kp DE_EURO &kp DE_LBRC &kp DE_RBRC  &kp DE_ASTRK &kp DE_GRV   &trans           &trans   &none    &none     &none      &none    &none
+                                        &trans       &trans       &trans                                 &trans   &trans    &trans
+            >;
+        };
+
+        num_layer {
+            label= "NUM";
+            bindings = <
+                &none     &none    &none      &none     &none  &kp C_VOL_UP    &trans &kp DE_N7 &kp DE_N8 &kp DE_N9 &kp DE_TILD   &none
+                &kp LGUI  &kp LALT &kp LCTRL  &kp LSHFT &none  &kp C_VOL_DN    &trans &kp DE_N4 &kp DE_N5 &kp DE_N6 &kp DE_PIPE   &none
+                &none     &none    &none      &none     &none  &kp C_MUTE      &trans &kp DE_N1 &kp DE_N2 &kp DE_N3 &kp DE_QMARK  &kp DE_PLUS
+                                   &trans     &trans    &trans                  &trans    &trans    &kp DE_N0
+            >;
+        };
+
+        fun_layer {
+            label= "FUN";
+            bindings = <
+                &none     &none        &none        &none        &none  &kp C_VOL_UP     &trans &kp F7   &kp F8  &kp F9  &none   &bt BT_PRV
+                &kp LGUI  &kp LALT     &kp LCTRL    &kp LSHFT    &none  &kp C_VOL_DN     &trans &kp F4   &kp F5  &kp F6  &none   &bt BT_CLR
+                &none     &kp LC(DE_X) &kp LC(DE_C) &kp LC(DE_V) &none  &kp C_MUTE       &trans &kp F1   &kp F2  &kp F3  &none   &bt BT_NXT
+                                       &trans       &trans       &trans                   &trans   &trans  &trans
+            >;
+        };
+
+        nav_layer {
+            label= "NAV";
+            bindings = <
+                &none     &kp PG_UP &kp HOME   &kp UP   &kp END   &trans     &trans  &none    &none     &none     &none    &none
+                &kp CLCK  &kp PG_DN &kp LEFT   &kp DOWN &kp RIGHT &trans     &trans  &none    &kp LSHFT &kp LCTRL &kp LALT &kp LGUI
+                &kp INS   &none     &none      &none    &none     &trans     &trans  &none    &none     &none     &none    &none
+                                    &trans     &trans   &trans                       &trans   &trans    &trans
+            >;
+        };
+
     };
 };

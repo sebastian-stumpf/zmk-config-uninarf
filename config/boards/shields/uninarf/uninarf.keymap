@@ -18,10 +18,10 @@
 
         default_layer {
             bindings = <
-                &kp DE_Q       &kp DE_W       &kp DE_E       &kp DE_R       &kp DE_T   &C_PREV     &tog NUM   &kp DE_Z       &kp DE_U       &kp DE_I       &kp DE_O       &kp DE_P
-                &mt LGUI DE_A  &mt LALT DE_S  &mt LCTRL DE_D &mt LSHFT DE_F &kp DE_G   &C_PP       &to BASE   &kp DE_H       &mt LSHFT DE_J &mt LCTRL DE_K &mt LALT DE_L  &mt LGUI DE_HASH
-                &kp DE_Y       &kp DE_X       &kp DE_C       &kp DE_V       &kp DE_B   &C_NEXT     &tog NAV   &kp DE_N       &kp DE_M       &kp DE_COMMA   &kp DE_DOT     &kp DE_MINUS
-                                              &lt NUM ESC    &lt FUN DEL    &kp BSPC                          &kp SPC   &lt NAV TAB &lt SYM RET
+                &kp DE_Q       &kp DE_W       &kp DE_E       &kp DE_R       &kp DE_T   &kp C_PREV     &to NUM    &kp DE_Z       &kp DE_U       &kp DE_I       &kp DE_O       &kp DE_P
+                &mt LGUI DE_A  &mt LALT DE_S  &mt LCTRL DE_D &mt LSHFT DE_F &kp DE_G   &kp C_PP       &to BASE   &kp DE_H       &mt LSHFT DE_J &mt LCTRL DE_K &mt LALT DE_L  &mt LGUI DE_HASH
+                &kp DE_Y       &kp DE_X       &kp DE_C       &kp DE_V       &kp DE_B   &kp C_NEXT     &to NAV    &kp DE_N       &kp DE_M       &kp DE_COMMA   &kp DE_DOT     &kp DE_MINUS
+                                              &lt NUM ESC    &lt FUN DEL    &kp BSPC                             &kp SPC        &lt NAV TAB    &lt SYM RET
             >;
         };
 
